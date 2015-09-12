@@ -8,12 +8,12 @@ import java.util.Random;
 
 class Node {
     Node nextLink;
-    Node secondLink;
+    Node randomLink;
     String value;                 
     
     @Override
     public String toString(){
-    	return value+"--> (" + ((nextLink==null) ? nextLink.value : null) + ", "+ ((secondLink==null) ? secondLink.value : null)+")";
+    	return value+"--> (" + ((nextLink==null) ? nextLink.value : null) + ", "+ ((randomLink==null) ? randomLink.value : null)+")";
     }
 }
 
@@ -48,7 +48,7 @@ public class DuoList implements Cloneable {
         iterNode = firstEl;
         while (iterNode != null)         
         {
-        	iterNode.secondLink=secNodes.get( random.nextInt(secNodes.size()));
+        	iterNode.randomLink=secNodes.get( random.nextInt(secNodes.size()));
             iterNode = iterNode.nextLink;     
         }
 
@@ -60,7 +60,7 @@ public class DuoList implements Cloneable {
         List<Node> deq= new LinkedList<Node>();
         while (iterNode != null)           
         {
-        	deq.add(iterNode.secondLink);
+        	deq.add(iterNode.randomLink);
             System.out.print(iterNode.value + " --> "); 
             iterNode = iterNode.nextLink;     
         }
@@ -95,7 +95,7 @@ public class DuoList implements Cloneable {
     	copiedNodes.put(inpNode, outNode);
     
     	outNode.nextLink = copyNode(inpNode.nextLink,copiedNodes);
-    	outNode.secondLink = copyNode(inpNode.secondLink,copiedNodes);
+    	outNode.randomLink = copyNode(inpNode.randomLink,copiedNodes);
     	
     	return outNode;
     }
