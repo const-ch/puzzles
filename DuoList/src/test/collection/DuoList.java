@@ -10,7 +10,7 @@ class Node {
     Node nextLink;
     Node randomLink;
     String value;                 
-    
+    //tst
     @Override
     public String toString(){
     	return value+"--> (" + ((nextLink==null) ? nextLink.value : null) + ", "+ ((randomLink==null) ? randomLink.value : null)+")";
