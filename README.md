@@ -1,4 +1,4 @@
-# Puzzles and small tasks
+# *Puzzles and small tasks*
 
 
 ## Prime Reduction Challenge from Kattis
